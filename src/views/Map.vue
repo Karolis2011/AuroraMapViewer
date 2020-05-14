@@ -1,5 +1,5 @@
 <template>
-  <panZoom @init="onInit" :options="{minZoom: 0.5, maxZoom: 5}">
+  <panZoom @init="onInit" :options="{minZoom: 0.5, maxZoom: 10}">
     <div class="mapcontents">
       <img :src="map">
       <!-- <router-link class="linkup" :to="`/${zlevel + 1}`">Up</router-link> -->
