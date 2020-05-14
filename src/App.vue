@@ -1,14 +1,23 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/3">Sub level</router-link> |
-      <router-link to="/4">Main level</router-link> |
-      <router-link to="/5">Construction level</router-link> |
-      <router-link to="/6">Surface level</router-link>
+      <router-link
+      v-for="(m, k) in maps"
+      :key="k"
+      :to="'/' + k">{{ m.name }}</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+import maps from './maps'
+export default {
+  data: () => ({
+    maps
+  })
+}
+</script>
 
 <style lang="scss">
 #app {
@@ -28,10 +37,15 @@ body {
   padding: 5px;
   padding-top: 10px;
   background: white;
+  z-index: 10;
+  position: absolute;
+  right: 0;
+  left: 0;
 
   a {
     font-weight: bold;
     color: #2c3e50;
+    margin: 0 0.5em;
 
     &.router-link-exact-active {
       color: #42b983;
