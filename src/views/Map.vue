@@ -1,5 +1,5 @@
 <template>
-  <panZoom @init="onInit" :options="{minZoom: 0.5, maxZoom: 10}">
+  <panZoom @init="onInit" :options="{minZoom: 0.05, maxZoom: 5}">
     <div class="mapcontents">
       <img :src="map">
       <!-- <router-link class="linkup" :to="`/${zlevel + 1}`">Up</router-link> -->
@@ -20,7 +20,8 @@ export default {
   },
   methods: {
     onInit(panzoomInstance) {
-      panzoomInstance.zoomAbs(this.dim / 2, this.dim / 2, 1)
+      console.log("AAAA")
+      panzoomInstance.moveTo(-8160 / 2, -8160 / 2, 1)
     },
     onPan(e) {
       console.log(e)
@@ -29,7 +30,6 @@ export default {
   data () {
     return {
       publicPath: 'https://mapimages.build.aurorastation.org/',
-      dim: 8192
     }
   }
 }
@@ -37,8 +37,9 @@ export default {
 
 <style lang="scss" scoped>
   .mapcontents {
-    float: left;
-    z-index: -1;
+    display: inline-block;
+    min-width: 8160px;
+    min-height: 8160px;
   }
   img {
     image-rendering: pixelated;
