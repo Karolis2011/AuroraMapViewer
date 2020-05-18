@@ -63,9 +63,11 @@ export default {
       this.uut = null
     },
     updateProps(route) {
-      this.center.lat = parseFloat(route.query.x)
-      this.center.lng = parseFloat(route.query.y)
-      this.zoom = parseInt(route.query.z)
+      if(route.query.x && route.query.y && route.query.z) {
+        this.center.lat = parseFloat(route.query.x)
+        this.center.lng = parseFloat(route.query.y)
+        this.zoom = parseInt(route.query.z)
+      }
     }
   },
   data () {
@@ -85,9 +87,7 @@ export default {
   },
   watch: {
     $route (to, from){
-      if(to.query.x && to.query.y && to.query.z) {
-        this.updateProps(to)
-      }
+      this.updateProps(to)
     }
   }
 }
