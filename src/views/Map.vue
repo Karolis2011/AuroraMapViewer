@@ -94,7 +94,7 @@ export default {
       minZoom: 0,
       crs: CRS.Simple,
       bounds: [[0, 0], [255, 255]],
-      publicPath: 'https://mapimages.build.aurorastation.org/',
+      publicPath: 'https://mapimages.build.aurorastation.org/Aurorastation/Aurora.3/master/',
       mlat: 0,
       mlng: 0
     }
