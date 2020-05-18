@@ -59,13 +59,13 @@ export default {
     },
     _updateURL() {
       this.$log("UpURL")
-      this.$router.replace({path: this.$route.path, query: {x: this.center.lat, y: this.center.lng, z: this.zoom}})
+      this.$router.replace({path: this.$route.path, query: {y: this.center.lat, x: this.center.lng, z: this.zoom}})
       this.uut = null
     },
     updateProps(route) {
       if(route.query.x && route.query.y && route.query.z) {
-        this.center.lat = parseFloat(route.query.x)
-        this.center.lng = parseFloat(route.query.y)
+        this.center.lat = parseFloat(route.query.y)
+        this.center.lng = parseFloat(route.query.x)
         this.zoom = parseInt(route.query.z)
       }
     }
