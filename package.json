@@ -9,9 +9,10 @@
   },
   "dependencies": {
     "core-js": "^3.1.2",
+    "leaflet": "^1.6.0",
     "vue": "^2.6.10",
-    "vue-panzoom": "^1.1.0",
-    "vue-router": "^3.0.6"
+    "vue-router": "^3.0.6",
+    "vue2-leaflet": "^2.5.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.0.0",

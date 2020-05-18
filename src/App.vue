@@ -26,11 +26,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
 }
 
 body {
   margin: 0px;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 #nav {
@@ -38,7 +42,6 @@ body {
   padding-top: 10px;
   background: white;
   z-index: 10;
-  position: absolute;
   right: 0;
   left: 0;
 
