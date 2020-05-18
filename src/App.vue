@@ -25,7 +25,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -33,6 +32,8 @@ export default {
 }
 
 body {
+  background: #1a1921;
+  color: white;
   margin: 0px;
   // overflow: hidden;
 }
@@ -40,15 +41,15 @@ body {
 #nav {
   padding: 5px;
   padding-top: 10px;
-  background: white;
   z-index: 10;
   right: 0;
   left: 0;
-
+  background: rgba(255,255,255,0.1) url('https://forums.aurorastation.org/uploads/set_resources_3/005d20f304c7929cbfdb3fe61d088022_texture.png') repeat 50% 50%;
   a {
     font-weight: bold;
-    color: #2c3e50;
     margin: 0 0.5em;
+    color: white;
+    text-decoration: none;
 
     &.router-link-exact-active {
       color: #42b983;

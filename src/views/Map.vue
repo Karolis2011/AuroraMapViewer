@@ -4,7 +4,8 @@
       ref="map"
       :zoom="zoom"
       :center="center"
-      :min-zoom="minZoom"
+      :min-zoom="1"
+      :max-Zoom="8"
       :crs="crs"
       class="map"
       :maxBounds="maxBounds"
@@ -89,11 +90,10 @@ export default {
     return {
       uut: null,
       updating: false,
-      zoom: 0,
+      zoom: 2,
       center: {lat: 0, lng: 0},
-      minZoom: 0,
       crs: CRS.Simple,
-      bounds: [[0, 0], [255, 255]],
+      bounds: [[1, 1], [256, 256]],
       publicPath: 'https://mapimages.build.aurorastation.org/',
       mlat: 0,
       mlng: 0
