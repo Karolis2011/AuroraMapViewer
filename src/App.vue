@@ -45,7 +45,7 @@ body {
   z-index: 10;
   right: 0;
   left: 0;
-  background: rgba(255,255,255,0.1) url('https://forums.aurorastation.org/uploads/set_resources_3/005d20f304c7929cbfdb3fe61d088022_texture.png') repeat 50% 50%;
+  background: rgba(255,255,255,0.1) url('/header.png') repeat 50% 50%;
   a {
     font-weight: bold;
     margin: 0 0.5em;
