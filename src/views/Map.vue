@@ -94,7 +94,7 @@ export default {
       center: {lat: 0, lng: 0},
       crs: CRS.Simple,
       bounds: [[1, 1], [256, 256]],
-      publicPath: 'https://mapimages.build.aurorastation.org/',
+      publicPath: 'https://mapimages.build.aurorastation.org/Aurorastation/Aurora.3/master/',
       mlat: 0,
       mlng: 0
     }
