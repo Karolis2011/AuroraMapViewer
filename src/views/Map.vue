@@ -10,19 +10,22 @@
       :maxBounds="maxBounds"
       @update:zoom="onZoom"
       @update:center="onPan"
+      @ready="mapReady"
     >
       <l-image-overlay
         className="mapImage"
         :url="mapUrl"
         :bounds="maxBounds"
       />
+      <l-rectangle ref="rec" :bounds="[[mlat, mlng], [mlat + 1, mlng + 1]]" color="#40628a" :weight="5">
+      </l-rectangle>
     </l-map>
   </div>
 </template>
 
 <script>
-import { CRS } from "leaflet";
-import { LMap, LImageOverlay, LMarker, LPopup, LPolyline } from "vue2-leaflet";
+import { CRS, point } from "leaflet";
+import { LMap, LImageOverlay, LMarker, LPopup, LPolyline, LRectangle, LTooltip } from "vue2-leaflet";
 import maps from '../maps'
 
 export default {
@@ -31,7 +34,8 @@ export default {
     LImageOverlay,
     LMarker,
     LPopup,
-    LPolyline
+    LPolyline,
+    LRectangle
   },
   computed: {
     maxBounds() {
@@ -57,6 +61,17 @@ export default {
       if(this.uut) return
       this.uut = setTimeout(this._updateURL, 200)
     },
+    mapReady() {
+      var tt = this.$refs.rec.mapObject.bindTooltip(`${this.mlng}, ${this.mlat}`, {
+          direction: 'bottom',
+          offset: point(0, 50)
+        })
+      this.$refs.map.mapObject.on('mousemove', (e) => {
+        this.mlat = Math.floor(e.latlng.lat);
+        this.mlng = Math.floor(e.latlng.lng);
+        tt.setTooltipContent(`${this.mlng}, ${this.mlat}`).openTooltip()
+      })
+    },
     _updateURL() {
       this.$log("UpURL")
       this.$router.replace({path: this.$route.path, query: {y: this.center.lat, x: this.center.lng, z: this.zoom}})
@@ -80,6 +95,8 @@ export default {
       crs: CRS.Simple,
       bounds: [[0, 0], [255, 255]],
       publicPath: 'https://mapimages.build.aurorastation.org/',
+      mlat: 0,
+      mlng: 0
     }
   },
   created() {
