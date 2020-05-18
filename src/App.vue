@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  // font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -35,6 +35,7 @@ body {
   background: #1a1921;
   color: white;
   margin: 0px;
+  font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   // overflow: hidden;
 }
 
@@ -52,7 +53,7 @@ body {
     text-decoration: none;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: rgb(147, 145, 167);
     }
   }
 }
