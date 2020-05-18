@@ -4,8 +4,8 @@
       ref="map"
       :zoom="zoom"
       :center="center"
-      :min-zoom="1"
-      :max-Zoom="8"
+      :min-zoom="minzoom"
+      :max-zoom="maxzoom"
       :crs="crs"
       class="map"
       :maxBounds="maxBounds"
@@ -96,7 +96,9 @@ export default {
       bounds: [[1, 1], [256, 256]],
       publicPath: 'https://mapimages.build.aurorastation.org/Aurorastation/Aurora.3/master/',
       mlat: 0,
-      mlng: 0
+      mlng: 0,
+      maxzoom: 8,
+      minzoom: 1
     }
   },
   created() {
